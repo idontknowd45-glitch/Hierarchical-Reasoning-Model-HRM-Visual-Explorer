@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import ReadmeDialog from './ReadmeDialog';
 
 export default function Header() {
   const { setTheme } = useTheme();
