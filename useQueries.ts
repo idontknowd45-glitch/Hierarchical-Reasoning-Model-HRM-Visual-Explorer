@@ -26,3 +26,16 @@ export function useBenchmarkData() {
     enabled: !!actor && !isFetching,
   });
 }
+
+export function useReadmeContent() {
+  const { actor, isFetching } = useActor();
+
+  return useQuery<string | null>({
+    queryKey: ['readmeContent'],
+    queryFn: async () => {
+      if (!actor) return null;
+      return actor.getReadmeContent();
+    },
+    enabled: !!actor && !isFetching,
+  });
+}
